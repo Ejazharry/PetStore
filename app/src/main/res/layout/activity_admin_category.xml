@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategoryActivity">
+
+    <TextView
+        android:id="@+id/pets_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add Products"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/Linear1_category_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/pets_category"
+
+        >
+
+        <ImageView
+            android:id="@+id/dog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/dogs"/>
+
+        <ImageView
+            android:id="@+id/caticon"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/caticon"/>
+
+        <ImageView
+            android:id="@+id/fishes"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/fishes"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear2_category_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="150dp"
+        android:layout_below="@+id/pets_category"
+        >
+
+
+        <ImageView
+            android:id="@+id/birds"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/birds"/>
+
+        <ImageView
+            android:id="@+id/horse"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/horses"/>
+
+
+        <ImageView
+            android:id="@+id/rabbits"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/rabbit"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Linear3_category_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="250dp"
+        android:layout_below="@+id/pets_category"
+        >
+
+
+        <ImageView
+            android:id="@+id/food"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/petfood"/>
+
+        <ImageView
+            android:id="@+id/accessories"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:src="@drawable/accessories"/>
+
+
+        <ImageView
+            android:id="@+id/medicines"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/petmedicines"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

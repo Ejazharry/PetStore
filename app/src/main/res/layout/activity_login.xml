@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cat"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_applogo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+<EditText
+    android:id="@+id/login_phone_number_input"
+    android:layout_width="300dp"
+    android:layout_height="60dp"
+    android:layout_below="@+id/login_applogo"
+    android:layout_marginTop="50dp"
+    android:padding="20dp"
+    android:layout_centerHorizontal="true"
+    android:hint="Phone Number"
+    android:background="@drawable/whitebutton"
+    android:inputType="number"
+    android:textColor="@color/colorAccent"
+    android:textSize="17sp"
+    android:textStyle="bold"/>
+
+
+    <EditText
+        android:id="@+id/login_Password_input"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/login_phone_number_input"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/whitebutton"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/login_Password_input"
+        android:layout_marginTop="5dp">
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me_chkb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="15dp"
+            android:layout_marginStart="65dp"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="RememberMe"
+
+            />
+
+        <TextView
+            android:id="@+id/forget_password-link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password ?"
+            android:textColor="@color/colorAccent"
+            android:textSize="17sp"
+            android:layout_marginStart="25dp"/>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/linear_layout_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/whitebutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="LogIn"
+        android:textAllCaps="false"
+
+        android:textSize="18.0dp" />
+
+    <TextView
+        android:id="@+id/admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin?"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginStart="80dp"/>
+    <TextView
+        android:id="@+id/not_admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Admin?"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:layout_marginStart="80dp"/>
+</RelativeLayout>
