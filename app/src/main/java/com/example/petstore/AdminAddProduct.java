@@ -199,6 +199,7 @@ private Uri ImageUri;
         productMap.put("image", downloadImageUrl);
         productMap.put("category", CategoryName);
         productMap.put("breedname", pname);
+        productMap.put("price", Price);
 
         PetsRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

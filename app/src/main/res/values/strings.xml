@@ -18,4 +18,5 @@
     <string name="orders">Orders</string>
     <string name="tools">Tools</string>
     <string name="logout">Logout</string>
+    <string name="buy_now">Buy Now</string>
 </resources>

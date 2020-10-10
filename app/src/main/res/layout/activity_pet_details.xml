@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PetDetailsActivity">
+
+
+    <ImageView
+        android:id="@+id/petImageDetails"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/petBreedNameDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/petImageDetails"
+        android:textStyle="bold"
+        android:text="Breed Name"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/petDescriptionDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/petBreedNameDetails"
+        android:textStyle="bold"
+        android:text="Breed Description"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/petPriceDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/petDescriptionDetails"
+        android:textStyle="bold"
+        android:text="Price"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/numberButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:textSize="16sp"
+        android:elevation="6dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/petPriceDetail"
+        app:initialNumber="1"
+        app:finalNumber="10"
+
+
+        >
+
+
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+
+
+<Button
+    android:id="@+id/petaddtoCart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:layout_margin="20dp"
+    android:layout_alignParentBottom="true"
+    android:text="@string/buy_now"
+    android:textColor="@android:color/white"
+    android:textSize="18dp"/>
+
+</RelativeLayout>

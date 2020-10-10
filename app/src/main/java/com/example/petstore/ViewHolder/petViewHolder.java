@@ -13,7 +13,7 @@ import com.example.petstore.interfaces.ItemClickListener;
 public class petViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
 
-    public TextView textBreedName, txtPetDescription;
+    public TextView textBreedName, txtPetDescription, txtpetPrice;
     public ImageView imageView;
     public  ItemClickListener listener;
     public petViewHolder(@NonNull View itemView) {
@@ -21,7 +21,7 @@ public class petViewHolder extends RecyclerView.ViewHolder implements View.OnCli
 
         imageView = (ImageView) itemView.findViewById(R.id.pet_image);
         textBreedName = (TextView) itemView.findViewById(R.id.breed_name);
-        txtPetDescription = (TextView) itemView.findViewById(R.id.pet_description);
+        txtpetPrice = (TextView) itemView.findViewById(R.id.pet_price);
     }
 
     public  void setItemClickListener(ItemClickListener listener)
@@ -31,6 +31,6 @@ public class petViewHolder extends RecyclerView.ViewHolder implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        listener.onClick(view, getAdapterPosition(), false);
+        listener.onClick(v, getAdapterPosition(), false);
     }
 }

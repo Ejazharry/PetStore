@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings">
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarSettings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        >
+        <Toolbar
+            android:id="@+id/toolbarSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+             <TextView
+                 android:id="@+id/closeSettings"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Back"
+                 android:textStyle="bold"
+                 android:textSize="20dp"
+                 android:layout_alignParentStart="true"
+                 android:textColor="@android:color/white"/>
+
+             <TextView
+                 android:id="@+id/saveSettings"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Save"
+                 android:textStyle="bold"
+                 android:textSize="20dp"
+                 android:layout_alignParentEnd="true"
+                 android:layout_marginRight="12dp"
+                 android:textColor="@android:color/white"/>
+
+         </RelativeLayout>
+
+
+
+        </Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settingsImage"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/profile"
+        android:layout_below="@id/appbarSettings"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/profileImageChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@+id/settingsImage"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="5dp"/>
+
+
+    <EditText
+        android:id="@+id/settingsFullName"
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileImageChange"
+        android:layout_marginTop="30dp"
+        android:hint="Full Name"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/settingsPhoneNumber"
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingsFullName"
+        android:layout_marginTop="10dp"
+        android:hint="Phone Number"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/settingsAddress"
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingsPhoneNumber"
+        android:layout_marginTop="10dp"
+        android:hint="Address"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+
+</RelativeLayout>

@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AdminCategoryActivity extends AppCompatActivity {
      private ImageView dogs, cats, fishes, birds, horse, rabbits, food, accessories, medicines;
+
+     private Button LogoutBtn, CheckOrdersButton, EditProductBtn ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,39 @@ public class AdminCategoryActivity extends AppCompatActivity {
         accessories = (ImageView ) findViewById(R.id.accessories);
         medicines = (ImageView ) findViewById(R.id.medicines);
 
+        LogoutBtn = (Button) findViewById(R.id.AdminLogOutButton);
+        CheckOrdersButton = (Button) findViewById(R.id.checkOrdersBtn);
+        EditProductBtn = (Button) findViewById(R.id.AlterProductsButton);
+
+        EditProductBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+            }
+        });
+
+
+
+        LogoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        CheckOrdersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrderActivity.class);
+                startActivity(intent);
+            }
+        });
 
         dogs.setOnClickListener(new View.OnClickListener() {
             @Override

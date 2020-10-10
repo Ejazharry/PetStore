@@ -14,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Add Products"
+        android:textColor="@android:color/black"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"/>
@@ -114,6 +115,54 @@
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/checkOrdersBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_above="@+id/AlterProductsButton"
+        android:background="@color/colorPrimary"
+        android:text="Check New Orders"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/AlterProductsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AdminLogOutButton"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:text="Edit Product Details"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/AdminLogOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:text="Log Out"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+
 
 
 
