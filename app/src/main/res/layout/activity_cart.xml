@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:layout_marginTop="10dp"
-            android:text="Total: "
+            android:text="Your Cart"
             android:textSize="20dp"
             android:textAlignment="center"
             />
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:text="Proceed"
+        android:text="Buy Now"
         android:textColor="@android:color/white"
         android:textSize="20dp"/>
 

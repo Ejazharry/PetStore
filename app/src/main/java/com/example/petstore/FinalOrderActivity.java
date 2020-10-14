@@ -20,12 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class FinalOrderActivity extends AppCompatActivity {
 
     private EditText nameEditText, phoneEditText, cityEditText, addressEditText;
     private Button confirmOrder;
     private String totalAmount = "";
+    String fileIDorder = UUID.randomUUID().toString();
 
 
 
@@ -81,6 +83,7 @@ public class FinalOrderActivity extends AppCompatActivity {
     {
 
         final String saveCurrentTime, saveCurrentDate;
+
         Calendar calForDate = Calendar.getInstance();
 
         SimpleDateFormat currentdate = new SimpleDateFormat("MMM dd, yyyy");
@@ -89,7 +92,7 @@ public class FinalOrderActivity extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentTime.format(calForDate.getTime());
 
-        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+        final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone()).child(fileIDorder);
         HashMap<String, Object> ordersMap = new HashMap<>();
 
         ordersMap.put("TotalAmount", totalAmount);
@@ -113,7 +116,7 @@ public class FinalOrderActivity extends AppCompatActivity {
                                     if(task.isSuccessful())
                                     {
 
-                                        Toast.makeText(FinalOrderActivity.this, "Hurrey !! Your Order Placed Successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(FinalOrderActivity.this, "Hurrey !! Your Order Placed Successfully", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(FinalOrderActivity.this,HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:backgroundTint="@android:color/holo_blue_light"
-        app:srcCompat="@drawable/nav_cart" />
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/categoryhome"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

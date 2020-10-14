@@ -13,11 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petstore.ViewHolder.CartViewHolder;
 import com.example.petstore.model.Cart;
+import com.example.petstore.model.petsstore;
 import com.example.petstore.prevalent.Prevalent;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,6 +30,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -54,6 +57,7 @@ public class CartActivity extends AppCompatActivity {
         totalAmount = (TextView) findViewById(R.id.totalPrice);
         txtMsg1 = (TextView) findViewById(R.id.msg1);
 
+
         ProceedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +78,6 @@ public class CartActivity extends AppCompatActivity {
 
 
         super.onStart();
-        CheckOrderState();
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
                 .setQuery(cartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone()).child("Pets"),Cart.class).build();
@@ -146,47 +149,6 @@ public class CartActivity extends AppCompatActivity {
 
     }
 
-    private void CheckOrderState()
-    {
-        DatabaseReference ordersRef;
-        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
-        ordersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-             if(snapshot.exists())
-             {
-                 String shippingState = snapshot.child("State").getValue().toString();
-                 String UserName = snapshot.child("UserName").getValue().toString();
-                 String totalPrice = snapshot.child("TotalAmount").getValue().toString();
 
-                 if(shippingState.equals("shipped"))
-                 {
-
-
-                     recyclerView.setVisibility(View.GONE);
-                     txtMsg1.setVisibility(View.VISIBLE);
-                     txtMsg1.setText("Dear " + UserName + ", your order is shipping. \n Please pay Rs: " + totalPrice + " at the time of delivery.");
-                     totalAmount.setText("Order Details");
-                     ProceedButton.setVisibility(View.GONE);
-                 }
-                 else if(shippingState.equals("Not Shipped"))
-                 {
-                     recyclerView.setVisibility(View.GONE);
-                     txtMsg1.setVisibility(View.VISIBLE);
-                     //totalAmount.setText("Dear " + UserName + ", your order is in progress. Please Wait For Conformation.");
-                     totalAmount.setText("Order Details");
-                     ProceedButton.setVisibility(View.GONE);
-
-                 }
-
-             }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
 }

@@ -2,5 +2,17 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:title="Search"
+    android:icon="@drawable/searchicon"
+    android:id="@+id/searchicon"
+    app:showAsAction="always"
+    />
 
+    <item
+        android:title="Cart"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:id="@+id/carticon"
+        app:showAsAction="always"
+        />
 </menu>

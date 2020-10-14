@@ -1,53 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:strokeColor="@android:color/darker_gray"
+    app:strokeWidth="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
+    app:cardCornerRadius="25dp"
     app:cardElevation="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
-        android:background="@color/colorPrimary">
+        android:background="@android:color/white">
+
+
+
 
         <TextView
             android:id="@+id/cartBreedName"
             android:layout_width="160dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Breed Name"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:text="Name"
+
+            android:textColor="@android:color/black"
             android:textSize="18dp" />
 
         <TextView
             android:id="@+id/cartQuantity"
             android:layout_width="160dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/cartBreedName"
             android:layout_marginLeft="10dp"
             android:text="Quantity"
-            android:textAlignment="textEnd"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="18dp"
             android:layout_marginRight="10dp"
-            android:textStyle="bold"/>
+            />
 
         <TextView
             android:id="@+id/cartPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_below="@+id/cartBreedName"
+           android:layout_below="@+id/cartQuantity"
             android:text="Price"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
             android:textSize="18dp" />
 
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

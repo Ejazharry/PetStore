@@ -2,15 +2,16 @@ package com.example.petstore.model;
 
 public class Cart {
 
-    private String pid, breedname, price, quantity, discount;
+    private String pid, breedname, price, quantity, discount, image;
 
     public Cart() {
     }
 
-    public Cart(String pid, String breedname, String price, String quantity, String discount) {
+    public Cart(String pid, String breedname, String price, String quantity, String discount,String image) {
         this.pid = pid;
         this.breedname = breedname;
         this.price = price;
+        this.image = image;
         this.quantity = quantity;
         this.discount = discount;
     }
@@ -53,5 +54,13 @@ public class Cart {
 
     public void setDiscount(String discount) {
         this.discount = discount;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

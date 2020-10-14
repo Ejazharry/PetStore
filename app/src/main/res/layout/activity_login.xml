@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cat"
+android:background="@drawable/loginpagebackgroundimage"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="40dp"/>
 <EditText
     android:id="@+id/login_phone_number_input"
     android:layout_width="300dp"
@@ -57,9 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="15dp"
-            android:layout_marginStart="65dp"
+            android:layout_marginStart="54dp"
             style="@style/Material.Drawable.CheckBox"
-            android:text="RememberMe"
+            android:text=" RememberMe"
 
             />
 
@@ -67,7 +67,7 @@
             android:id="@+id/forget_password-link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot Password ?"
+            android:text=""
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:layout_marginStart="25dp"/>
@@ -79,12 +79,12 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="130dp"
+        android:layout_width="170dp"
         android:layout_height="60dp"
         android:layout_below="@id/linear_layout_1"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
 
         android:layout_marginBottom="10dp"

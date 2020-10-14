@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.petstore.ViewHolder.petViewHolder;
 import com.example.petstore.model.petsstore;
@@ -21,43 +19,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class SearchActivity extends AppCompatActivity {
-
-    private Button SearchBtn;
-    private EditText inputText;
+public class showSelectedProduct extends AppCompatActivity {
+    private String CategoryName;
     private RecyclerView searchList;
-    private String SearchInput;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_show_selected_product);
 
-        inputText = findViewById(R.id.search);
-        SearchBtn = findViewById(R.id.SearchBtn);
-        searchList = findViewById(R.id.searchList);
-        searchList.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
-
-
-        SearchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                SearchInput = inputText.getText().toString();
-                onStart();
-            }
-        });
+        CategoryName = getIntent().getExtras().get("category").toString();
+        searchList = findViewById(R.id.categoryList);
+        searchList.setLayoutManager(new LinearLayoutManager(showSelectedProduct.this));
     }
-
     @Override
-        protected void onStart() {
-            super.onStart();
-
+    protected void onStart() {
+        super.onStart();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Pets");
 
         FirebaseRecyclerOptions<petsstore> options = new FirebaseRecyclerOptions.Builder<petsstore>()
-                .setQuery(reference.orderByChild("breedname").startAt(SearchInput), petsstore.class).build();
+                .setQuery(reference.orderByChild("category").startAt(CategoryName).endAt(CategoryName), petsstore.class).build();
 
         FirebaseRecyclerAdapter<petsstore, petViewHolder> adapter = new FirebaseRecyclerAdapter<petsstore, petViewHolder>(options) {
             @Override
@@ -69,7 +49,7 @@ public class SearchActivity extends AppCompatActivity {
                 petViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(SearchActivity.this, PetDetailsActivity.class);
+                        Intent intent = new Intent(showSelectedProduct.this, PetDetailsActivity.class);
                         intent.putExtra("pid",petsstore.getPid());
                         startActivity(intent);
                     }
@@ -84,7 +64,6 @@ public class SearchActivity extends AppCompatActivity {
                 return holder;
             }
         };
-
         searchList.setAdapter(adapter);
         adapter.startListening();
     }

@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -75,7 +76,7 @@ private String petId = "", state = "Normal";
     protected void onStart() {
         super.onStart();
 
-        CheckOrderState();
+        //CheckOrderState();
     }
 
     private void addingPetsToCartList()
@@ -92,7 +93,6 @@ private String petId = "", state = "Normal";
         saveCurrentTime =currentTime.format(calForDate.getTime());
 
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
-
         final HashMap<String , Object> cartMap = new HashMap<>();
 
         cartMap.put("pid", petId);
@@ -116,8 +116,6 @@ private String petId = "", state = "Normal";
                                           {
                                               Toast.makeText(PetDetailsActivity.this, "Added To Cart", Toast.LENGTH_SHORT).show();
 
-                                              Intent intent = new Intent(PetDetailsActivity.this,HomeActivity.class);
-                                              startActivity(intent);
                                           }
                                         }
                                     });

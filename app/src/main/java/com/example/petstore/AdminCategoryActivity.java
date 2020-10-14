@@ -34,6 +34,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         CheckOrdersButton = (Button) findViewById(R.id.checkOrdersBtn);
         EditProductBtn = (Button) findViewById(R.id.AlterProductsButton);
 
+
         EditProductBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

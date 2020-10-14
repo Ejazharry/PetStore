@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/registerbackimage"
     android:layout_height="match_parent"
-    android:background="@drawable/signuppageimage"
     tools:context=".RegisterActivity">
     <ImageView
         android:id="@+id/signup_applogo"
@@ -12,13 +12,13 @@
         android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="275dp"/>
+        android:layout_marginTop="40dp"/>
     <EditText
         android:id="@+id/signup_name_input"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_below="@+id/signup_applogo"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:hint="Name"
@@ -66,10 +66,9 @@
 
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/whitebutton"
-        android:backgroundTint="@android:color/holo_blue_light"
         android:padding="10dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
+        android:background="@drawable/whitebutton"
         android:text="SignUp"
         android:textAllCaps="false"
 

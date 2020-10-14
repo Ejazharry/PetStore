@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class settings extends AppCompatActivity {
     private CircleImageView profileImageView;
     private EditText fullNameEditText, userPhoneEditText, addressEditText;
     private TextView profileChangeTextBtn, closeTextBtn, saveTextButton;
+    private Button sequirityQuestionBtn;
 
     private Uri imageUri;
     private String myUrl = "";
@@ -60,6 +62,8 @@ public class settings extends AppCompatActivity {
         closeTextBtn = (TextView) findViewById(R.id.closeSettings);
         saveTextButton = (TextView) findViewById(R.id.saveSettings);
         userInfoDisplay(profileImageView, fullNameEditText,userPhoneEditText,addressEditText);
+        sequirityQuestionBtn = findViewById(R.id.settingsPasswordReset);
+
 
 
         closeTextBtn.setOnClickListener(new View.OnClickListener() {

@@ -99,6 +99,20 @@
         android:hint="Address"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/settingsPasswordReset"
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingsAddress"
+        android:layout_marginTop="10dp"
+        android:text="Sequirity Questions"
+        android:background="@color/colorPrimary"
+        android:layout_margin="15dp"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"/>
+
 
 
 

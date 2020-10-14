@@ -40,7 +40,7 @@
         android:layout_above="@+id/mainloginButton"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/signupbutton"
+        android:background="@drawable/buttons"
         android:padding="10dp"
         android:textAllCaps="false"
         android:textSize="18.0dp"

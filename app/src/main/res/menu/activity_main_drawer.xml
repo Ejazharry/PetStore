@@ -7,7 +7,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_categories"
-            android:icon="@drawable/category"
+            android:icon="@drawable/categoryhome"
             android:title="@string/category"
             android:iconTint="@android:color/white"/>
 
@@ -17,15 +17,15 @@
             android:title="@string/cart"
             android:iconTint="@android:color/white"/>
         <item
-            android:id="@+id/nav_search"
-            android:icon="@drawable/orders"
-            android:title="Search"
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_baseline_featured_play_list_24"
+            android:title="Your Orders"
             android:iconTint="@android:color/white"/>
 
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/settings"
-            android:title="@string/tools"
+            android:title="Settings"
             android:iconTint="@android:color/white"/>
         <item
             android:id="@+id/nav_logout"

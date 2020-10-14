@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
   private EditText InputNumber, InputPassword;
   private Button LoginButton;
     private ProgressDialog loadingBar;
-    private TextView Admin, NotAdmin;
+    private TextView Admin, NotAdmin, forgetPassword;
     private String parentDbName = "Users";
     private com.rey.material.widget.CheckBox chkBoxRememberMe;
     @Override
@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         chkBoxRememberMe = (com.rey.material.widget.CheckBox) findViewById(R.id.remember_me_chkb);
         Paper.init(this);
 
+
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         Admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginButton.setText("Login Admin");
+                LoginButton.setText("Admin Login");
                 Admin.setVisibility(View.INVISIBLE);
                 NotAdmin.setVisibility(View.VISIBLE);
                 parentDbName = "Admins";
@@ -74,6 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                 parentDbName = "Users";
             }
         });
+
+
 
     }
 
